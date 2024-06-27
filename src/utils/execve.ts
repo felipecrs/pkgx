@@ -43,6 +43,7 @@ export default function({cmd: args, env}: {cmd: string[], env: Record<string, st
       throw new PkgxError(`execve (${errno})`)
   }
 
+  console.error(`DEBUG: execve errno: ${errno}`);
   throw new ProgrammerError(`execve (${errno})`)
 }
 
