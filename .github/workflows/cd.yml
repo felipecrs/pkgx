@@ -53,8 +53,14 @@ jobs:
 
   attach-binary-products:
     needs: attach-srcs
-    runs-on: ubuntu-latest
-    name: linux
+    strategy:
+      matrix:
+        platform:
+        - os: macos-latest
+        - os: ubuntu-latest
+      fail-fast: false
+    runs-on: ${{ matrix.platform.os }}
+    name: ${{ matrix.platform.os }}
     steps:
       - uses: actions/download-artifact@v4
         with:
@@ -64,10 +70,12 @@ jobs:
 
       - run: pkgx +xz tar xJf pkgx-${{ github.event.inputs.version }}.tar.xz --strip-components=1
 
-      - name: Set up QEMU
+      - if: runner.os == 'Linux'
+        name: Set up QEMU
         uses: docker/setup-qemu-action@v3
 
-      - name: Set up Docker Buildx
+      - if: runner.os == 'Linux'
+        name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
       - run: scripts/build-binaries.sh '${{ github.event.inputs.version }}'
@@ -75,6 +83,6 @@ jobs:
       - name: attach product to release
         run: pkgx gh release upload --clobber
           v${{ github.event.inputs.version }}
-          pkgx+*+${{ github.event.inputs.version }}.tar.xz
+          pkgx-${{ github.event.inputs.version }}+*+*.tar.xz
         env:
           GH_TOKEN: ${{ github.token }}
