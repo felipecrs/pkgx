@@ -72,7 +72,8 @@ Deno.test("execve.ts", async runner => {
     }
   })
 
-  const thisfile = new Path(new URL(import.meta.url).pathname)
+  const thisfile = new Path(import.meta.filename!)
+  console.error(`THISFILE: ${thisfile.string}`)
 
   await runner.step("file exists but is not executable", () => {
     const cmd = [thisfile.string, ...faker_args()]
