@@ -27,7 +27,7 @@
         "--unstable",
         "--inspect-brk",
         "--allow-all",
-        "src/app.ts"
+        "entrypoint.ts"
       ],
       "args": "${input:args}",
       "attachSimplePort": 9229
