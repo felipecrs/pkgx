@@ -260,7 +260,7 @@
     "https://raw.githubusercontent.com/felipecrs/libpkgx/main/src/hooks/usePantry.ts": "eef63a22cb65d4c450f78ec9161a3926be26367fe06acba5a91185a3b13a4388",
     "https://raw.githubusercontent.com/felipecrs/libpkgx/main/src/hooks/useShellEnv.ts": "14d29f23b8e256590318cfd5fb840955038429c4cac8f71dfbf8deb46b7d88ec",
     "https://raw.githubusercontent.com/felipecrs/libpkgx/main/src/hooks/useSync.ts": "d709b0e92c2bd1929a737bc42f3284a78ab07d21b85853521a605c5fa043a6ed",
-    "https://raw.githubusercontent.com/felipecrs/libpkgx/main/src/hooks/useSyncCache.ts": "d8cb23f2d9cd6a1baba46a94633be41d3559bdff7f3232e791b752f701ad4257",
+    "https://raw.githubusercontent.com/felipecrs/libpkgx/main/src/hooks/useSyncCache.ts": "7b88825b882470bd541a8d30f67c9bd9c2e42fc0a2a9a6fd7a370b11d854b7f4",
     "https://raw.githubusercontent.com/felipecrs/libpkgx/main/src/plumbing/hydrate.ts": "c75f151ed307532ce9c2bf62c61e6478bb1132f95a11b848e02ea2dec08c2ff3",
     "https://raw.githubusercontent.com/felipecrs/libpkgx/main/src/plumbing/install.ts": "19244fb150e80a0bbbed90e4a3f47e2c5aa3e0919ff060cec1db0b789730b560",
     "https://raw.githubusercontent.com/felipecrs/libpkgx/main/src/plumbing/link.ts": "acb98bf014414208f14c5f57fa36e2aa66ae9bee69d763120c3ddb656e244063",
