@@ -49,9 +49,7 @@ jobs:
         working-directory:
           ${{ env.FILENAME }}
         env:
-          # using this token rather than github.token due to `release not found` bug
-          # https://github.com/pkgxdev/cli/issues/5252
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
       - uses: actions/upload-artifact@v4
         with:
           name: srcs
@@ -177,8 +175,5 @@ jobs:
           v${{ github.event.inputs.version }}
           ${{env.BASENAME}}.*
         env:
-          # using this token rather than github.token due to `release not found` bug
-          # https://github.com/pkgxdev/cli/issues/5252
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          GH_REPO: pkgxdev/pkgx
+          GH_TOKEN: ${{ github.token }}
         shell: bash
